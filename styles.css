@@ -1,0 +1,88 @@
+/* Setting the font family, modern white background color, center alignment, and top padding */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('icon.png'); /* Set the background image */
+  background-position: center; /* Center the image */
+}
+
+/* Container for the game elements using flexbox for a responsive layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Container for the input field and button, aligning them in the center with some margin at the bottom */
+.input-container {
+  margin-bottom: 20px;
+}
+
+/* Styling for the input field where the user enters a word */
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff; /* Blue color for the button */
+  color: #fff;
+  border: none;
+  border-radius: 15px; /* Rounded corners for the button */
+  cursor: pointer;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2); /* Add a slight shadow effect */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions for color, scale, and shadow changes */
+
+  /* Adding a hover effect to the button */
+  &:hover {
+    background-color: #0056b3; /* Darker blue color when hovering */
+    transform: translateY(-2px); /* Move the button slightly upwards on hover */
+  }
+
+  /* Adding a transition for the active state (when the button is clicked) */
+  &:active {
+    transform: translateY(1px); /* Move the button slightly downwards on click */
+    box-shadow: none; /* Remove the shadow on click */
+  }
+}
+
+/* Adding some margin at the bottom of the container to create space for the letter boxes */
+#boxContainer {
+  margin-bottom: 30px;
+}
+
+/* Styling for the boxes that represent the letters of the word */
+.box {
+  display: inline-flex; /* Using inline-flex to hide the content boundaries within the box */
+  align-items: center; /* Centering the text within the box */
+  justify-content: center; /* Centering the text horizontally within the box */
+  width: 40px; /* Width of the box */
+  height: 40px; /* Height of the box */
+  margin: 5px;
+  background-color: red; /* Default background color for the boxes */
+  font-size: 20px; /* Font size of the text */
+  color: #fff; /* Text color */
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for the boxes */
+  transition: background-color 0.3s; /* Smooth transition when the background color changes */
+}
+
+/* Styling for the boxes when they turn green (when clicked) */
+.green-box {
+  background-color: green; /* Green background color for the boxes */
+  animation: pulseGreenBoxes 1s linear infinite; /* Applying the pulseGreenBoxes animation */
+}
+
+/* Animation keyframes to create a pulsating effect for the green boxes */
+@keyframes pulseGreenBoxes {
+  0%, 100% {
+    transform: scale(1); /* Starting and ending point: normal size */
+  }
+  50% {
+    transform: scale(1.2); /* Middle point: 1.2 times larger */
+  }
+}
